@@ -1,0 +1,123 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    min-height: 100vh;
+    min-width: 100vw;
+    justify-content: center;
+    background-color: #e3f2fd;
+}
+.container{
+    box-shadow: 20px 20px 20px #5b91b8;
+    border-radius: 20px;
+    border: black solid;
+     width: 800px; /* tamanho da caixa  */
+    padding: 35px 40px;/* aqui determando as marge de dentro da caixa  */
+    color: #fff;
+    background-color: #1a0d0d;
+}
+h2{
+    font-size: 1.6rem;
+    display: flex;
+
+}
+.column{
+    display: flex;
+    align-items: center;
+text-transform: uppercase;
+}
+.column span{ /** aqui definimos o span**/
+    font-weight: 700;
+    margin-right:15px;
+    font-size: 1.19rem;
+
+}
+.volume-slider input {
+    accent-color: #fff; /** aqui deixamos acentuador o input **/
+}
+
+.keys-check input{/* aqui deixamos o botão none de aparecenicia para podermos stilizar ao nosso jeito */
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    background-color: #7e6c6c;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.keys-check input::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #353333;
+    position: absolute;
+    top: 50%;
+    left: 0.3rem;
+    border-radius: inherit;
+    transform: translateY(-50%);
+    transition: all 0.35s ease;
+
+}
+.keys-check input:checked::before{
+    left: 2.1rem;
+    background-color:  #fff;
+}
+.piano-keys{
+    display: flex;
+    margin: 40px;
+}
+
+nav{
+    color: #b2b2b2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row ;
+}
+.piano-keys .key{
+    cursor: pointer;
+    list-style: none;
+    color: #a2a2a2;
+    user-select: none;
+    position: relative;
+    text-transform: uppercase;
+}
+.piano-keys .whiter{
+    width: 70px;
+    height: 230px;
+    border: 1px solid black;
+    background: linear-gradient(#fff 96% , #eee 4%);
+    border-radius: 8px;
+    transition: all 0.8ms ease;
+}
+.piano-keys .black{
+    width: 44px;
+    height: 140px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(#333 , #000 );
+    border-radius: 0px 0px 5px 5px;
+    z-index: 2; /** aqui criamos uma outra dimensão **/
+    margin: 0 -22px 0 -22px;
+    transition: all 0.8ms ease;
+}
+
+.piano-keys span {  /** aqui vamos mecher nas letras da telca**/
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.13rem;
+    font-weight: 700;
+}
+.piano-keys .whiter.active{
+    box-shadow: inset -5px 5px 20px 10px  rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom #000 , #434343 );
+    
+}
+.piano-keys .black.active{
+    box-shadow: inset -5px 5px 20px 10px  rgba(255, 255, 255, 0.2);
+    background: linear-gradient(to bottom #fff , #434343 );
+}
+.piano-keys .key.hide span{
+    display: none;
+}
